@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<title>Casa Milà</title>
+<link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css"/>
+<script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+<style>
+html, body { margin:0; height:100%; width:100%; overflow:hidden; }
+#panorama { width:100%; height:100%; }
+</style>
+</head>
+<body>
+
+<div id="panorama"></div>
+
+<script>
+var scenes = {
+    "scene1": {
+        "type":"equirectangular",
+        "panorama":"Casa Milà 1.jpg",
+        "hotSpots":[
+            {"pitch":0,"yaw":140,"type":"scene","text":"Sali","sceneId":"scene2"}
+        ]
+    },
+    "scene2": {
+        "type":"equirectangular",
+        "panorama":"Casa Milà 2.jpg",
+        "hotSpots":[
+            {"pitch":0,"yaw":175,"type":"scene","text":"Scendi","sceneId":"scene1"}
+        ]
+    }
+};
+
+pannellum.viewer('panorama', {
+    "default":{"firstScene":"scene1","sceneFadeDuration":1000},
+    "scenes":scenes,
+    "autoLoad":true,
+    "showFullscreenCtrl":true,
+    "showVRCtrl":true
+});
+</script>
+
+</body>
+</html>
